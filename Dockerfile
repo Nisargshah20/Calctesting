@@ -1,5 +1,5 @@
 FROM openjdk
-COPY target/devops_calculator-1.0-SNAPSHOT.jar /usr/app/
-WORKDIR /usr/app
-CMD ["java" , "-jar" , "devops_calculator-1.0-SNAPSHOT.jar"]
+EXPOSE 8080
+ADD target/devops_calculator-1.0-SNAPSHOT.jar devops_calculator-1.0-SNAPSHOT.jar
+ENTRYPOINT ["java" , "-jar" , "devops_calculator-1.0-SNAPSHOT.jar"]
 

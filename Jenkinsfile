@@ -1,7 +1,7 @@
 pipeline {
   
   environment {
-    registry = "bently5050/calc"
+    registry = "nisarg20/calc"
     registryCredential = 'dockerhub'
   }
   
