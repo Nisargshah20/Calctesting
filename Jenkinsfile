@@ -47,6 +47,22 @@ pipeline {
             }
         }
     }
-    
-    }
+
+    stage('Deploy') {
+        steps {
+    	  logstash{
+                script {
+                  step([$class: "RundeckNotifier",
+                      includeRundeckLogs: true,
+                      jobId: "63eedae0-f343-4433-84f5-b80f5b763329",
+                      rundeckInstance: "Rundeck",
+                      shouldFailTheBuild: true,
+                      shouldWaitForRundeckJob: true,
+                      tailLog: true])
+                }
+           }
+    	}
+     }
+
+  }
 }
